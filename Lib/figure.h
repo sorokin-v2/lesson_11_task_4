@@ -1,17 +1,17 @@
 #pragma once
 #include <string>
 
-#ifdef DYNAMICLIBRARYDYNAMIC_EXPORTS
-#define DYNAMICLIBRARYDYNAMIC_EXPORTS __declspec(dllexport)
+#ifdef Lib_EXPORTS                                          //ИМЯ И РЕГИСТР ВАЖНЫ!!! в проекте библиотеки DLL Visual Studio автоматически определяет макрос <ИМЯПРОЕКТА>_EXPORTS
+#define DYNAMICLIBRARYDYNAMIC_API __declspec(dllimport)
 #else
-#define DYNAMICLIBRARYDYNAMIC_EXPORTS __declspec(dllimport)
+#define DYNAMICLIBRARYDYNAMIC_API __declspec(dllexport)
 #endif
 
 
 class Figure {
 public:
-    DYNAMICLIBRARYDYNAMIC_EXPORTS Figure();
-    DYNAMICLIBRARYDYNAMIC_EXPORTS virtual void print_info();
+    DYNAMICLIBRARYDYNAMIC_API Figure();
+    DYNAMICLIBRARYDYNAMIC_API virtual void print_info();
 protected:
     virtual bool check();
 
